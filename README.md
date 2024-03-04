@@ -22,7 +22,7 @@
 - Planar Geometric Library "shapely" [https://github.com/shapely/shapely](https://github.com/shapely/shapely)
 
 在OpenAI gym CarRacing任务的基础上进行修改，删除了原有的赛道，修改了状态观察，添加了目标和障碍物的代码实现。
-对于修改后的状态观察，读者可以跳到 [./env/move_to_pose.py#L241](./env/move_to_pose.py#L241) 了解更多，它们包含但不限于
+对于修改后的状态观察，读者可以跳到 [./env/move_to_pose.py#L241](./env/move_to_pose.py#L241) 了解更多，它们包括但不限于
 
 ``` python
 
@@ -44,8 +44,22 @@
 
 分别代表车身的线速度、四轮各自的速度，前轮角度，车身的角速度等。除此以外，还有小车对于障碍物和目标的观察，在此不列举了。
 
+当小车达到目标时（包括方向正确），会获得500分的奖励；当小车与障碍物发生碰撞时，获得-500分。这是一个稀疏奖励的任务。
+
 ## How it works?
 
 对于这一个基础的经典的控制问题，人们提出过非常多方法和思路。然而对于这样的问题结合具体运动学模型来求解精确解可能是困难的，结合最优化理论来对机器人进行运动规划恐怕也是不切实际的，因为这样的问题往往不具备凸性，以至于不得不做一些简化的处理，否则无法保证计算的高效性。
 
-近年来，强化学习在新一轮AI浪潮中也得到了发展。在这篇工作中，我们提议可以尝试深度强化学习来解决这一问题。
+近年来，强化学习在新一轮AI浪潮中也得到了发展。在这篇工作中，我们提议可以尝试深度强化学习来解决这一问题。我们参考的工作有：
+
+- CleanRL [https://github.com/vwxyzjn/cleanrl](https://github.com/vwxyzjn/cleanrl)
+
+- Stable Baselines 3 [https://github.com/DLR-RM/stable-baselines3](https://github.com/DLR-RM/stable-baselines3)
+
+- DDPG [https://arxiv.org/abs/1509.02971](https://arxiv.org/abs/1509.02971)
+
+- TD3 [https://arxiv.org/abs/1802.09477](https://arxiv.org/abs/1802.09477)
+
+- Hindsight Experience Replay [https://arxiv.org/abs/1707.01495](https://arxiv.org/abs/1707.01495)
+
+- Prioritized Experience Replay [https://arxiv.org/abs/1511.05952v4](https://arxiv.org/abs/1511.05952v4)
