@@ -63,3 +63,5 @@
 - Hindsight Experience Replay [https://arxiv.org/abs/1707.01495](https://arxiv.org/abs/1707.01495)
 
 - Prioritized Experience Replay [https://arxiv.org/abs/1511.05952v4](https://arxiv.org/abs/1511.05952v4)
+
+然而，直接把前人的模型拿过来恐怕还不能直接解决这个问题，我们必须再做一些额外的工作。
