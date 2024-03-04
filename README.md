@@ -4,6 +4,19 @@
 
 如果在线的README markdown 中的公式存在乱码，你可以选择渲染好的pdf版本 [pdf](./RL-Obstacle-Avoidance-Car.pdf)
 
+如果你想要在论文中引用我做的实验，请与我联系
+
+```
+@misc{RLObstacleAvoidanceCar,
+        title = {RL-Obstacle-Avoidance-Car},
+        url = {https://github.com/ZJEast/RL-Obstacle-Avoidance-Car},
+        abstract = {RL Obstacle Avoidance Car},
+        urldate = {2024-03-04},
+        author = {Jundong Zhang},
+        year = {2024},
+}
+```
+
 ## What is it?
 
 任务中，要求四轮小车到达指定目标并保证自己不会与障碍物发生碰撞。目标用黄色三角形代表，障碍物用红色圆圈来控制。
